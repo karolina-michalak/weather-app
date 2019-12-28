@@ -59,7 +59,7 @@ class App extends React.Component {
     return (
       <div>
         <Form value={this.state.value} change={this.handleChange} submit={this.handleSubmit}/>
-        <Outcome/>
+        <Outcome weather={this.state}/>
       </div>
     )
   }
