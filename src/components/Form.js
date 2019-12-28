@@ -2,10 +2,10 @@ import React from 'react';
 
 const Form = props => {
     return (
-        <div>
-            <input type="text" placeholder="city"/>
+        <form onSubmit={props.submit}>
+            <input type="text" placeholder="city" value={props.value} onChange={props.change}/>
             <button>search</button>
-        </div>
+        </form>
     )
 }
 export default Form;
