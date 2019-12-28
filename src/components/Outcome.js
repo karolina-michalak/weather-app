@@ -10,10 +10,17 @@ const Outcome = props => {
     const sunsetTime = new Date(sunset * 1000).toLocaleTimeString()
 
     content = (
-        <div>Weather for: {city}</div>
+        <>
+            <div>Weather for: {city} at: {date}</div>
+            <div>Temperature: {temperature} &deg;C</div>
+            <div>Pressure: {pressure} hPa</div>
+            <div>Sunrise: {sunriseTime}</div>
+            <div>Sunset: {sunsetTime}</div>
+
+        </>
 
     )
-    }
+}
 
 
         return (

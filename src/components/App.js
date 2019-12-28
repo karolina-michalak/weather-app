@@ -26,7 +26,7 @@ class App extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&appid=${APIkey}`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&appid=${APIkey}&units=metric`)
     .then(response => {
       if(response.ok){
         return response
