@@ -1,10 +1,9 @@
 import React from 'react';
 
-const Form = () => {
+const Form = props => {
     return (
         <div>
             <input type="text" placeholder="city"/>
-            <input type="text" placeholder="country"/>
             <button>search</button>
         </div>
     )
