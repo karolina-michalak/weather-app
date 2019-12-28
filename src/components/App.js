@@ -23,6 +23,17 @@ class App extends React.Component {
     })
   }
 
+  handleSubmit = e => {
+    e.preventDefault()
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&appid=${APIKey}`)
+    .then(response => {
+      if(response.ok){
+        return response
+      }
+    })
+    throw Error('something went wrong')
+  }
+
   render(){
     return (
       <div>
