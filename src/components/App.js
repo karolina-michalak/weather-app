@@ -15,6 +15,7 @@ class App extends React.Component {
     pressure: '',
     sunrise: '',
     sunset: '',
+    error: false
   }
 
   handleChange = e => {
@@ -25,13 +26,33 @@ class App extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&appid=${APIKey}`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&appid=${APIkey}`)
     .then(response => {
       if(response.ok){
         return response
       }
+      throw Error('something went wrong')
     })
-    throw Error('something went wrong')
+    .then(response => response.json())
+    .then(data => {
+      const time = new Date().toLocaleString()
+      this.setState(prevState => ({
+        city: prevState.value,
+        date: time,
+        temperature: data.main.temp,
+        pressure: data.main.pressure,
+        sunrise: data.sys.sunrise,
+        sunset: data.sys.sunset,
+        error: false
+      }))
+    })
+    .catch(error => {
+      console.log(error);
+      this.setState(prevState => ({
+        err: true,
+        city: prevState.value
+      }))
+    })
   }
 
   render(){
