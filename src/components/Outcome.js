@@ -21,9 +21,9 @@ const Outcome = props => {
 }
 
         return (
-            <div>
-               {error ? null : content}
-            </div>
+            <>
+               {error ? `not avaliable for '${city}'` : content}
+            </>
         )
     }
 

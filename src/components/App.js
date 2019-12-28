@@ -1,7 +1,8 @@
 import React from 'react';
-import '../App.css';
 import Form from './Form.js';
-import Outcome from './Outcome.js'
+import Outcome from './Outcome.js';
+import styles from '../modules/App.module.css';
+import weather from '../img/weather.jpg'
 
 
 const APIkey = '8b8637b7d1aae4708ca3edc46e3dc175'
@@ -24,9 +25,8 @@ class App extends React.Component {
     })
   }
 
-  componentDidUpdate(prevState) {
-    if (this.state.value.length === 0) return
-    if (prevState.value !== this.state.value) {
+  handleSubmit = e => {
+    e.preventDefault()
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&appid=${APIkey}&units=metric`)
     .then(response => {
       if(response.ok){
@@ -55,14 +55,20 @@ class App extends React.Component {
       }))
     })
     }
-  }
+  
+  
 
   render(){
     return (
-      <div>
-        <h1>Weather App</h1>
-        <Form value={this.state.value} change={this.handleChange}/>
-        <Outcome weather={this.state}/>
+      <div className={styles.container}>
+        <div className={styles.photo}>
+          <img src={weather} alt='weather-photo'/>
+        </div>
+        <div className={styles.form}>
+          <h1>Weather App</h1>
+          <Form value={this.state.value} change={this.handleChange} submit={this.handleSubmit}/>
+          <Outcome weather={this.state}/>
+        </div>
       </div>
     )
   }
