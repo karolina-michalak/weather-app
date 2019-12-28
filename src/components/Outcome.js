@@ -16,16 +16,13 @@ const Outcome = props => {
             <div>Pressure: {pressure} hPa</div>
             <div>Sunrise: {sunriseTime}</div>
             <div>Sunset: {sunsetTime}</div>
-
         </>
-
     )
 }
 
-
         return (
             <div>
-               {error ? `not avaliable for ${city}` : content}
+               {error ? `not avaliable for '${city}'` : content}
             </div>
         )
     }

@@ -49,7 +49,7 @@ class App extends React.Component {
     .catch(error => {
       console.log(error);
       this.setState(prevState => ({
-        err: true,
+        error: true,
         city: prevState.value
       }))
     })
