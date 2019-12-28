@@ -1,10 +1,14 @@
 import React from 'react';
 import '../App.css';
+import Form from './Form.js'
+
+//APIkey = '8b8637b7d1aae4708ca3edc46e3dc175'
+
 
 function App() {
   return (
     <div>
-      działa
+      <Form/>
     </div>
   );
 }
