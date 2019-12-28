@@ -24,8 +24,9 @@ class App extends React.Component {
     })
   }
 
-  handleSubmit = e => {
-    e.preventDefault()
+  componentDidUpdate(prevState) {
+    if (this.state.value.length === 0) return
+    if (prevState.value !== this.state.value) {
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&appid=${APIkey}&units=metric`)
     .then(response => {
       if(response.ok){
@@ -53,12 +54,14 @@ class App extends React.Component {
         city: prevState.value
       }))
     })
+    }
   }
 
   render(){
     return (
       <div>
-        <Form value={this.state.value} change={this.handleChange} submit={this.handleSubmit}/>
+        <h1>Weather App</h1>
+        <Form value={this.state.value} change={this.handleChange}/>
         <Outcome weather={this.state}/>
       </div>
     )
