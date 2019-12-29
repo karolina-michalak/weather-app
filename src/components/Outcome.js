@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../modules/Outcome.module.css';
 
 const Outcome = props => {
-    const {city, date, temperature, pressure, sunrise, sunset, error } = props.weather
+    const { city, date, temperature, pressure, sunrise, sunset, error, name} = props.weather
 
     let content = null
 
@@ -12,7 +12,7 @@ const Outcome = props => {
 
     content = (
         <>
-            <div className={styles.element}>Weather for: <span>{city}</span> at: <span>{date}</span></div>
+            <div className={styles.element}>Weather for: <span>{name}</span> at: <span>{date}</span></div>
             <div className={styles.element}>Temperature: {temperature} &deg;C</div>
             <div className={styles.element}>Pressure: {pressure} hPa</div>
             <div className={styles.element}>Sunrise: {sunriseTime}</div>

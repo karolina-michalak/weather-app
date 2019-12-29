@@ -43,6 +43,7 @@ class App extends React.Component {
         pressure: data.main.pressure,
         sunrise: data.sys.sunrise,
         sunset: data.sys.sunset,
+        name: data.name,
         error: false
       }))
     })
