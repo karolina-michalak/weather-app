@@ -4,7 +4,7 @@ import styles from '../modules/Form.module.css';
 
 const Form = props => {
     return (
-        <form onSubmit={props.submit}>
+        <form onSubmit={props.submit} className={styles.form}>
             <input type="text" placeholder="type city here" value={props.value} onChange={props.change}/>
             <button>search</button>
         </form>

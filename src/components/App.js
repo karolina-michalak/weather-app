@@ -62,7 +62,7 @@ class App extends React.Component {
       <div className={styles.container}>
         <div className={styles.photo}>
         </div>
-        <div className={styles.form}>
+        <div className={styles.content}>
           <div className={styles.h1}>Weather App</div>
           <Form value={this.state.value} change={this.handleChange} submit={this.handleSubmit}/>
           <Outcome weather={this.state}/>

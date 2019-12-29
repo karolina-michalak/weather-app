@@ -20,7 +20,7 @@ body{
     height: 100vh
 }
 
-.form{
+.content{
     display: flex;
     flex: 50%;
     align-items: center;
