@@ -62,10 +62,9 @@ class App extends React.Component {
     return (
       <div className={styles.container}>
         <div className={styles.photo}>
-          <img src={weather} alt='weather-photo'/>
         </div>
         <div className={styles.form}>
-          <h1>Weather App</h1>
+          <div className={styles.h1}>Weather App</div>
           <Form value={this.state.value} change={this.handleChange} submit={this.handleSubmit}/>
           <Outcome weather={this.state}/>
         </div>
