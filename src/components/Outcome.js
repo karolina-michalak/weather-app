@@ -11,20 +11,20 @@ const Outcome = props => {
     const sunsetTime = new Date(sunset * 1000).toLocaleTimeString()
 
     content = (
-        <div className={styles.container}>
+        <>
             <div className={styles.element}>Weather for: <span>{city}</span> at: <span>{date}</span></div>
             <div className={styles.element}>Temperature: {temperature} &deg;C</div>
             <div className={styles.element}>Pressure: {pressure} hPa</div>
             <div className={styles.element}>Sunrise: {sunriseTime}</div>
             <div className={styles.element}>Sunset: {sunsetTime}</div>
-        </div>
+        </>
     )
 }
 
         return (
-            <>
+            <div className={styles.container}>
                {error ? `not avaliable for '${city}'` : content}
-            </>
+            </div>
         )
     }
 
