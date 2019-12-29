@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../modules/Outcome.module.css';
 
 const Outcome = props => {
     const {city, date, temperature, pressure, sunrise, sunset, error } = props.weather
