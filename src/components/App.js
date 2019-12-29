@@ -2,7 +2,6 @@ import React from 'react';
 import Form from './Form.js';
 import Outcome from './Outcome.js';
 import styles from '../modules/App.module.css';
-import weather from '../img/weather.jpg'
 
 
 const APIkey = '8b8637b7d1aae4708ca3edc46e3dc175'
